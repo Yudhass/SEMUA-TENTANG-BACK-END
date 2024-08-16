@@ -1,0 +1,25 @@
+{
+  "name": "rest_api_sim_almet",
+  "version": "1.0.0",
+  "description": "make rest full api on app SIM ALMET",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "migration:create": "npx sequelize-cli model:generate",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:roleback": "npx sequelize-cli db:migrate:undo",
+    "seed:create": "npx sequelize-cli seed:generate",
+    "seed:run": "npx sequelize-cli db:seed:all"
+  },
+  "author": "Yudha Developer",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "faker": "^6.6.6",
+    "mysql2": "^3.11.0",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
+  }
+}
