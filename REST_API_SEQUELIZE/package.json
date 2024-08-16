@@ -1,0 +1,21 @@
+{
+  "name": "rest_api_sequelize",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "migration:create": "npx sequelize-cli model:generate",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:roleback": "npx sequelize-cli db:migrate:undo",
+    "seed:create": "npx sequelize-cli seed:generate",
+    "seed:run": "npx sequelize-cli db:seed:all"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.5.3",
+    "mysql2": "^3.11.0",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2"
+  }
+}

@@ -1,0 +1,15 @@
+# run migrate
+npm run migrate
+
+#run migrate roleback
+npm run migrate:roleback
+
+#run make migration 
+npx sequelize-cli model:generate --name User --attributes nama:string,alamat:string
+npm run migration:create -- --name=Petugas --attributes=nama:string,alamat:string
+
+#run make seeder
+npm run seed:create -- --name user-seeder
+
+#run seeder
+npm run seed:run
