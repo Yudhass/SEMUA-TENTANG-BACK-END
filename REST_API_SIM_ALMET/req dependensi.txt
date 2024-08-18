@@ -1,1 +1,1 @@
-npm install dotenv express mysql2 nodemon faker sequelize sequelize-cli
+npm install dotenv express mysql2 nodemon faker sequelize sequelize-cli cors jsonwebtoken bcryptjs cookie-parser 

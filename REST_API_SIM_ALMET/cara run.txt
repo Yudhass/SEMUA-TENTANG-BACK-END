@@ -6,13 +6,16 @@ npm run migrate
 
 #run migrate roleback
 npm run migrate:roleback
+npm run migrate
 
 #run make migration 
-npx sequelize-cli model:generate --name User --attributes nama:string,alamat:string
+npm run migration:create -- --name=User --attributes nama:string,email:string,password:string
+npm run migration:create -- --name=Role --attributes nama:string
 npm run migration:create -- --name=Petugas --attributes=nama:string,instansi:string,no_telpon:string
 
 #run make seeder
 npm run seed:create -- --name user-seeder
+npm run seed:create -- --name role-seeder
 
 #run seeder
 npm run seed:run

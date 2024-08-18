@@ -1,16 +1,24 @@
 require("dotenv").config();
+const cors = require("cors");
+const cookieParser = require('cookie-parser');
+const apiRoute = require("./routes/api.js");
+const express = require("express");
+
 const PORT = process.env.PORT || 4000;
 
-const express = require('express');
-const petugasRoute = require("./routes/petugas_route.js");
-
-
 var app = express();
-app.use(express.json())
-// route untuk data petugas
-app.use('/petugas',petugasRoute);
+var corsOptions = {
+  origin: "http://localhost:4000",
+};
+app.use(cors(corsOptions));
+app.use(cookieParser());
+app.use(express.json());
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(PORT,()=>{
-    console.log(`Server running on port : ${PORT}`);
-    
-})
+// route untuk semua
+app.use("/", apiRoute);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port : ${PORT}`);
+});
