@@ -1,0 +1,30 @@
+# request.rest
+
+### get all user
+GET http://localhost:5000/users
+
+### get user by id
+GET http://localhost:5000/users/65bdc1c65aba8b9b0aa22e7e
+
+### create user
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name":"Bambang",
+    "email":"Bambang@gmail.com",
+    "gender":"male"
+}
+
+### update user
+PUT http://localhost:5000/users/65bdc1c65aba8b9b0aa22e7e
+Content-Type: application/json
+
+{
+    "name":"Joko",
+    "email":"joko@gmail.com",
+    "gender":"female"
+}
+
+### delete user
+DELETE http://localhost:5000/users/65bdc1dd5aba8b9b0aa22e80
