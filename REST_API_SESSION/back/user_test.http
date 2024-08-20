@@ -71,3 +71,7 @@ Content-Type: {{contentType}}
 
 ### me
 GET {{host}}/me
+
+
+### me
+DELETE {{host}}/logout
