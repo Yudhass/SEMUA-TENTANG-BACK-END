@@ -1,0 +1,73 @@
+@hostname = http://localhost
+@port = 5000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+### get all user
+GET {{host}}/user
+
+### get user by id
+GET {{host}}/user/f9526551-8481-4150-9884-804f2a0c6ce1
+
+### registrasi user admin
+POST {{host}}/user
+Content-Type: {{contentType}}
+
+{
+    "name": "bambang",
+    "email": "bimaboim10@gmail.com",
+    "password": "admin123",
+    "konfirmasi_password":"admin123",
+    "role":"admin"
+}
+
+### registrasi user biasa
+POST {{host}}/user
+Content-Type: {{contentType}}
+
+{
+    "name": "yudha",
+    "email": "bimaboim8@gmail.com",
+    "password": "user123",
+    "konfirmasi_password":"user123",
+    "role":"user"
+}
+
+### update user admin
+PATCH  {{host}}/user/ced6d48b-7652-4a8a-b9b9-7341d77db6d7
+Content-Type: {{contentType}}
+
+{
+    "name": "bambang pamungkas",
+    "email": "bimaboim10@gmail.com",
+    "password": "admin123", 
+    "konfirmasi_password":"admin123"
+}
+
+### update user biasa
+PATCH  {{host}}/user/5763659d-302d-4597-89ef-e654241dedf5
+Content-Type: {{contentType}}
+
+{
+    "name": "yudhas iskariot",
+    "email": "bimaboim8@gmail.com",
+    "password": "user",
+    "konfirmasi_password":"user"
+}
+
+
+### delete user
+DELETE {{host}}/user/f54da8a2-5b0f-40ea-b810-7973e375588d
+
+
+### login
+POST  {{host}}/login
+Content-Type: {{contentType}}
+
+{
+    "email": "bimaboim10@gmail.com",
+    "password": "admin123"
+}
+
+### me
+GET {{host}}/me
