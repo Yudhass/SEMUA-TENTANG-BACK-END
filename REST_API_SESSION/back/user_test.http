@@ -7,7 +7,7 @@
 GET {{host}}/user
 
 ### get user by id
-GET {{host}}/user/f9526551-8481-4150-9884-804f2a0c6ce1
+GET {{host}}/user/5763659d-302d-4597-89ef-e654241dedf5
 
 ### registrasi user admin
 POST {{host}}/user
@@ -30,6 +30,18 @@ Content-Type: {{contentType}}
     "email": "bimaboim8@gmail.com",
     "password": "user123",
     "konfirmasi_password":"user123",
+    "role":"user"
+}
+
+### registrasi user biasa
+POST {{host}}/user
+Content-Type: {{contentType}}
+
+{
+    "name": "user9",
+    "email": "bimaboim9@gmail.com",
+    "password": "user9",
+    "konfirmasi_password":"user9",
     "role":"user"
 }
 
@@ -57,16 +69,34 @@ Content-Type: {{contentType}}
 
 
 ### delete user
-DELETE {{host}}/user/f54da8a2-5b0f-40ea-b810-7973e375588d
+DELETE {{host}}/user/e5b9dea7-4385-4b3f-b429-03b458eed89a
 
 
-### login
+### login admin
 POST  {{host}}/login
 Content-Type: {{contentType}}
 
 {
     "email": "bimaboim10@gmail.com",
     "password": "admin123"
+}
+
+### login user
+POST  {{host}}/login
+Content-Type: {{contentType}}
+
+{
+    "email": "bimaboim9@gmail.com",
+    "password": "user9"
+}
+
+### login user
+POST  {{host}}/login
+Content-Type: {{contentType}}
+
+{
+    "email": "bimaboim8@gmail.com",
+    "password": "user"
 }
 
 ### me

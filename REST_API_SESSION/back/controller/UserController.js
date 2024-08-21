@@ -13,9 +13,10 @@ export const getUser = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json(`Error : ${error}`);
+    return res.status(500).json(`Error : ${error}`);
   }
 };
+
 export const getUserById = async (req, res) => {
   try {
     const user = await User.findOne({
@@ -33,9 +34,10 @@ export const getUserById = async (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    res.status(500).json(`Error : ${error}`);
+    return res.status(500).json(`Error : ${error}`);
   }
 };
+
 export const createUser = async (req, res) => {
   const { name, email, password, konfirmasi_password, role } = req.body;
   if (password !== konfirmasi_password) {
@@ -54,7 +56,7 @@ export const createUser = async (req, res) => {
     res.status(201).json({ msg: "Registrasi berhasil" });
   } catch (error) {
     console.log(error);
-    res.status(500).json(`Error : ${error}`);
+    return res.status(500).json(`Error : ${error}`);
   }
 };
 
@@ -99,7 +101,7 @@ export const updateUser = async (req, res) => {
     res.status(200).json({ msg: "Update data user berhasil" });
   } catch (error) {
     console.log(error);
-    res.status(500).json(`Error : ${error}`);
+    return res.status(500).json(`Error : ${error}`);
   }
 };
 export const deleteUser = async (req, res) => {
@@ -120,6 +122,6 @@ export const deleteUser = async (req, res) => {
     res.status(200).json({ msg: "Delete data user berhasil" });
   } catch (error) {
     console.log(error);
-    res.status(500).json(`Error : ${error}`);
+    return res.status(500).json(`Error : ${error}`);
   }
 };
