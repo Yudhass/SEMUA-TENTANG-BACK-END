@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { LoginUser, reset } from "../features/authSlice";
+import { getMe, LoginUser, reset } from "../features/authSlice";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,13 +12,29 @@ const Login = () => {
     (state) => state.auth
   );
 
-  useEffect(() => {
-    if (user || isSuccess) {
-      console.log("Login successful:", user);
-      navigate("/dashboard");
-    }
-    dispatch(reset());
-  }, [user, isSuccess, dispatch, navigate]);
+   useEffect(() => {
+     dispatch(getMe());
+   }, [dispatch]);
+
+   useEffect(() => {
+     if (isError) {
+       navigate("/");
+       dispatch(reset());
+     }
+     if (user || isSuccess) {
+       navigate("/dashboard");
+       dispatch(reset());
+     }
+   }, [isError, user, dispatch, navigate, isSuccess]);
+
+  // useEffect(() => {
+  //   if (user || isSuccess) {
+  //     navigate("/dashboard");
+  //   }
+  //   dispatch(reset());
+  // }, [user, isSuccess, dispatch, navigate]);
+
+  
 
   const Auth = (e) => {
     e.preventDefault();

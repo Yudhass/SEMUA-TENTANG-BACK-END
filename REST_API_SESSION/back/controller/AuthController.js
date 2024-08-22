@@ -48,6 +48,10 @@ export const Logout = (req, res) => {
     if (err) {
       return res.status(400).json({ msg: "Tidak dapat logout" });
     }
+
+    // Hapus cookie sesi
+    res.clearCookie("connect.sid"); // Pastikan nama cookie sama dengan yang digunakan di session config
+
     res.status(200).json({ msg: "Anda telah logout" });
   });
 };

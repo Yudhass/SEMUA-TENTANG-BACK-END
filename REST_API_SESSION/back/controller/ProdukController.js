@@ -32,7 +32,7 @@ export const getProduk = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    return res.status(500).json(`Error : ${error}`);
+    return res.status(500).json({ msg: `${error}` });
   }
 };
 
@@ -79,7 +79,7 @@ export const getProdukById = async (req, res) => {
     }
   } catch (error) {
     console.log(error);
-    return res.status(500).json(`Error : ${error}`);
+    return res.status(500).json({ msg: `${error}` });
   }
 };
 
@@ -94,7 +94,7 @@ export const createProduk = async (req, res) => {
     res.status(201).json({ msg: "Produk berhasil ditambahkan" });
   } catch (error) {
     console.log(error);
-    return res.status(500).json(`Error : ${error}`);
+    return res.status(500).json({ msg: `${error}` });
   }
 };
 
@@ -142,7 +142,7 @@ export const updateProduk = async (req, res) => {
     return res.status(200).json({ msg: "Data berhasil diubah" });
   } catch (error) {
     console.log(error);
-    return res.status(500).json(`Error : ${error}`);
+    return res.status(500).json({ msg: `${error}` });
   }
 };
 
@@ -177,6 +177,6 @@ export const deleteProduk = async (req, res) => {
     return res.status(200).json({ msg: "Data berhasil dihapus" });
   } catch (error) {
     console.log(error);
-    return res.status(500).json(`Error : ${error}`);
+    return res.status(500).json({ msg: `${error}` });
   }
 };

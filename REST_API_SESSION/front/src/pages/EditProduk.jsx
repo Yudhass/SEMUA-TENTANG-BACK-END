@@ -18,7 +18,7 @@ const EditProduk = () => {
     if (isError) {
       navigate("/");
     }
-  }, [isError, dispatch]);
+  }, [isError, dispatch, navigate]);
 
   return (
     <Layout>

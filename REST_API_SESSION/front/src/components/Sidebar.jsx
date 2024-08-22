@@ -32,15 +32,20 @@ const Sidebar = () => {
             </NavLink>
           </li>
         </ul>
-        <p className="menu-label">Admin</p>
-        <ul className="menu-list">
-          <li>
-            <NavLink to={"/user"}>
-              <IoPerson />
-              Users
-            </NavLink>
-          </li>
-        </ul>
+        {user && user.role === "admin" && (
+          <div>
+            <p className="menu-label">Admin</p>
+            <ul className="menu-list">
+              <li>
+                <NavLink to={"/user"}>
+                  <IoPerson />
+                  Users
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        )}
+
         <p className="menu-label">Settings</p>
         <ul className="menu-list">
           <li>

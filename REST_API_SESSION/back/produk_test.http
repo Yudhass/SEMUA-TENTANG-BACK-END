@@ -7,7 +7,7 @@
 GET {{host}}/produk
 
 ### get produk by id
-GET {{host}}/produk/549ceecb-62fe-4829-a72d-b74908748f5a
+GET {{host}}/produk/b04b532a-b956-4963-aac6-e18286856fa0
 
 ### create produk
 POST {{host}}/produk
